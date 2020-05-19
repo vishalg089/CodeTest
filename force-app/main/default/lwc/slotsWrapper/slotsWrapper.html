@@ -1,0 +1,12 @@
+<template>
+    <div class="slds-m-around_around">
+        <c-slots-demo onfirstevent={handleEvent}></c-slots-demo>
+    </div>
+    <div class="slds-m-around_around">
+        <c-named-slot>
+        <span slot="firstName">Willy</span>
+        <span slot="lastName">Wonka</span>
+        <span>Chocolatier</span>
+    </c-named-slot>
+    </div>
+</template>
