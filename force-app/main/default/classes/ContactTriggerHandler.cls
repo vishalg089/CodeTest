@@ -36,10 +36,9 @@ public with sharing Class ContactTriggerHandler {
                 primaryContactForAccountMap.put(acc.Id, true);
             }    
         }
-        
         //validations on Primary contact
         for(Contact cont : lstContacts) {
-            if(cont.primary__c && primaryContactForAccountMap.get(cont.AccountId)) {
+            if(cont.primary__c && !primaryContactForAccountMap.isEmpty() && primaryContactForAccountMap.get(cont.AccountId)) {
                 cont.primary__c.addError('Error : Primary contact already exist');
             }
         }
